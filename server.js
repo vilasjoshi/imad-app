@@ -7,6 +7,7 @@ app.use(morgan('combined'));
 
 //javascript object for all pages 
 var articleOne={
+ 
     title   :'Article One | VilasJoshi',
     heading :'Article One',
     date    : 'Aug 20,2017',
@@ -20,10 +21,7 @@ var articleOne={
                 
                 <p>
                     This is the content of my article.
-                </p>
-    `
-    
-    
+                </p>`
 };
 function createTemplate(data){
     var title   = data.title;
@@ -57,7 +55,7 @@ function createTemplate(data){
          </div>   
         </body>
     </html>` 
-;
+            ;
     return htmlTemplate;
 }
 
