@@ -6,7 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 //javascript object for all pages 
-var articleOne={
+var articles ={
+ 'article-one':{
  
     title   :'Article One | VilasJoshi',
     heading :'Article One',
@@ -22,6 +23,42 @@ var articleOne={
                 <p>
                     This is the content of my article.
                 </p>`
+},
+ 'article-two':{
+      title   :'Article Two | VilasJoshi',
+    heading :'Article Two',
+    date    : 'Aug 21,2017',
+    content :  ` 
+                <p>
+                    This is article two And second article one my site
+                </p>
+                <p>
+                    This is the content of my article.
+                </p>
+                
+                <p>
+                    This is the content of my article.
+                </p>`
+     
+     
+ },
+ 'article-three':{ 
+    title   :'Article three | VilasJoshi',
+    heading :'Article Three',
+    date    : 'Aug 22,2017',
+    content :  ` 
+                <p>
+                    This is article Three And Three article  my site
+                </p>
+                <p>
+                    This is the content of my article.
+                </p>
+                
+                <p>
+                    This is the content of my article.
+                </p>`
+     
+ }
 };
 function createTemplate(data){
     var title   = data.title;
@@ -62,8 +99,9 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    //articlename =article-One
+  res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'arttwo.html'));
