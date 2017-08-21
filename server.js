@@ -56,7 +56,7 @@ function createTemplate(data){
             </div>
          </div>   
         </body>
-    </html>`
+    </html>` 
 ;
     return htmlTemplate;
 }
