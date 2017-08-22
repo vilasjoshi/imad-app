@@ -99,6 +99,10 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+//Brown Bear:
+app.get('/ui/brownbear', function (req, res) {
+  res.send(path.join(__dirname, 'ui', 'brownbear.html'));
+});
 app.get('/:articleName', function (req, res) {
     //articlename =article-One
     var articleName=req.params.articleName;
