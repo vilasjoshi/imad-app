@@ -101,7 +101,7 @@ app.get('/', function (req, res) {
 });
 //Brown Bear:
 app.get('/ui/brownbear', function (req, res) {
-  res.send(path.join(__dirname, 'ui', 'brownbear.html'));
+  res.send(path.join(__dirname, 'ui', 'brownBear.html'));
 });
 app.get('/:articleName', function (req, res) {
     //articlename =article-One
