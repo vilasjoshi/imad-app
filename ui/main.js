@@ -1,13 +1,14 @@
-console.log('Loaded!');
-//move the image
-var img=document.getElementById('maintext');
-var marginLeft= 0 ;
-function miveRight(){
-    marginLeft= marginLeft+10;
-    img.style.marginLeft=marginLeft + 'px';
+//counter code
+var button =document.getElementById('counter');
+var counter=0;
+button.onclick = function() {
+    //Make request to counter endpoint
     
-}
-img.onlick = function () {
-    var interval= setInterval(moveRight,100);
-    img.style.marginLeft='100px';
+    //Caputer the response and store it in var
+    
+    //Render the variable in the corect span
+    counter = counter+1;
+    var span= document.getElemetById('count');
+    span.innerHTML= counter.toString();
+    
 };
