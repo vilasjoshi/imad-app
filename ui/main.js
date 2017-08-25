@@ -25,15 +25,15 @@ button.onclick = function() {
 };
 //Submit nname
 var nameInput   =   document.getElementById('name');
-var name        =   nameInput.value();
+var name        =   nameInput.value;
 var Submit      =   document.getElementById('submit_btn');
 Submit.onclick  =   function () {
   //make request to server and send the name
   
   
   //Capture a list of names and render it as alist
-  var names=['name1', 'name2','name3','name4'];
-  var list ='';
+  var names     =['name1', 'name2','name3','name4'];
+  var list      ='';
   for(var i=0;i<names.lenght;i++){
       list+='<li>' + names[i] + '<li>';
   }
