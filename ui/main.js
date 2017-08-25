@@ -1,14 +1,25 @@
 //counter code
 var button =document.getElementById('counter');
-var counter=0;
+
 button.onclick = function() {
     //Make request to counter endpoint
+    var request =new XMLHttpRequest();
     
     //Caputer the response and store it in var
+    request.onreadychange=function(){
+      if (request.readtState===XMLHttpRequest.DONE){
+          //Take some Action 
+          if(request.status===200){
+           var counter  =   requqest.responseText;
+           var span     =   document.getElementById('count');
+           sapn.innerHTML = counter.toString();
+          }
+      }
+      
+      
+    };
+    //Make the Request
+    request.open('GET','http://vilasjoshi222.imad.hasura-app.io/counter',true);
     
-    //Render the variable in the corect span
-    counter = counter + 1;
-    var span= document.getElementById('count');
-    span.innerHTML= counter.toString();
     
 };
